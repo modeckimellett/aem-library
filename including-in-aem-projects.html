@@ -119,52 +119,52 @@
 			<div class="body-content">
 <div class="section"> 
  <h2 id="Including_in_AEM_Projects">Including in AEM Projects</h2> 
- <p>Define Bedrock as the parent of a Maven project to inherit dependency and plugin management.</p> 
+ <p>Define the AEM Library as the parent of a Maven project to inherit dependency and plugin management.</p> 
  <div class="source"> 
   <pre>&lt;parent&gt;
     &lt;groupId&gt;com.icfolson.aem.library&lt;/groupId&gt;
     &lt;artifactId&gt;aem-library&lt;/artifactId&gt;
-    &lt;version&gt;6.0.1-SNAPSHOT&lt;/version&gt;
+    &lt;version&gt;6.0.1&lt;/version&gt;
 &lt;/parent&gt;
 </pre>
  </div> 
- <p>The including project’s Core module POM must also include the Bedrock API and Core modules as a compile-scoped dependency.</p> 
+ <p>The including project’s Core module POM must also include the AEM Library API and Core modules as a compile-scoped dependency.</p> 
  <div class="source"> 
   <pre>&lt;dependencies&gt;
     ...
     &lt;dependency&gt;
         &lt;groupId&gt;com.icfolson.aem.library&lt;/groupId&gt;
         &lt;artifactId&gt;aem-library-api&lt;/artifactId&gt;
-        &lt;version&gt;6.0.1-SNAPSHOT&lt;/version&gt;
+        &lt;version&gt;6.0.1&lt;/version&gt;
     &lt;/dependency&gt;
     &lt;dependency&gt;
         &lt;groupId&gt;com.icfolson.aem.library&lt;/groupId&gt;
         &lt;artifactId&gt;aem-library-core&lt;/artifactId&gt;
-        &lt;version&gt;6.0.1-SNAPSHOT&lt;/version&gt;
+        &lt;version&gt;6.0.1&lt;/version&gt;
     &lt;/dependency&gt;
     &lt;dependency&gt;
         &lt;groupId&gt;com.icfolson.aem.library&lt;/groupId&gt;
         &lt;artifactId&gt;aem-library-models&lt;/artifactId&gt;
-        &lt;version&gt;6.0.1-SNAPSHOT&lt;/version&gt;
+        &lt;version&gt;6.0.1&lt;/version&gt;
     &lt;/dependency&gt;
 &lt;/dependencies&gt;
 </pre>
  </div> 
- <p>Additionally, the project’s UI module POM must include the Bedrock UI dependency.</p> 
+ <p>Additionally, the project’s UI module POM must include the AEM Library UI dependency.</p> 
  <div class="source"> 
   <pre>&lt;dependencies&gt;
     ...
     &lt;dependency&gt;
         &lt;groupId&gt;com.icfolson.aem.library&lt;/groupId&gt;
         &lt;artifactId&gt;aem-library-ui&lt;/artifactId&gt;
-        &lt;version&gt;6.0.1-SNAPSHOT&lt;/version&gt;
+        &lt;version&gt;6.0.1&lt;/version&gt;
         &lt;type&gt;zip&lt;/type&gt;
     &lt;/dependency&gt;
 &lt;/dependencies&gt;
 </pre>
  </div> 
- <p>The UI dependency is used by the Maven Assembly Plugin to include the Bedrock zip artifact in the package created by the including project’s build process.</p> 
- <p>The project’s assembly descriptor (typically src/main/assembly/zip.xml in the UI module) must define a dependency set to include and unpack the Bedrock UI artifact.</p> 
+ <p>The UI dependency is used by the Maven Assembly Plugin to include the AEM Library zip artifact in the package created by the including project’s build process.</p> 
+ <p>The project’s assembly descriptor (typically src/main/assembly/zip.xml in the UI module) must define a dependency set to include and unpack the AEM Library UI artifact.</p> 
  <div class="source"> 
   <pre>&lt;dependencySets&gt;
     ...
@@ -187,7 +187,7 @@
 &lt;/dependencySets&gt;
 </pre>
  </div> 
- <p>Including Bedrock in this manner eliminates the need to build and install the project package separately and/or activate additional Maven profiles.</p>
+ <p>Including the AEM Library in this manner eliminates the need to build and install the project package separately and/or activate additional Maven profiles.</p>
 </div>
 			</div>
 		</div>
